@@ -7,22 +7,16 @@ public class Sketch extends PApplet {
   }
 
   public void setup() {
-    background(0, 255, 255);
+    background(209,179,153);
   }
 
-/*
- * Variable to check if the remote controls and lamps have been drawn.
- * If this hasDrawn check is not present, the lamp colours repeatedly changes forever and causes severe eye pain
- */
-  boolean hasDrawn = false;
   public void draw() {
-      // Draw the remote controls and lamps in lines only once
-      if (!hasDrawn) {
-          realDraw();
-          hasDrawn = true;
-      }
+      frameRate(3); // This is here to make sure the draw() function only runs 3 times a second, preventing your eyes from being overwhelmed by the flashing lights
+      realDraw();
   }
-
+  /**
+   * Draws a grid of remote controls and lamps, this is put in a seperate method for neatness
+   */
   public void realDraw() {
       for (int i = 40; i < height; i += 140) {
           for (int x = 40; x < width; x += 140) {
@@ -40,14 +34,14 @@ public class Sketch extends PApplet {
    * @author: Austin L
    */
   public void drawLamp(int x, int y) {
-    int[] lampColour = randomColour();
+    int[] lampColour = randomColour(); // Get a random colour for the lamp
     // Draw the lamp body
     fill(lampColour[0], lampColour[1], lampColour[2]);
-    rect(x, y, 40, 50); // Adjust the height to 50
+    rect(x, y, 40, 50);
 
     // Draw the lamp base
     fill(0);
-    rect(x + 10, y + 50, 20, 20); // Adjust the y-coordinate to y + 50 and the height to 20
+    rect(x + 10, y + 50, 20, 20);
 }
 
   /**
@@ -66,7 +60,7 @@ public class Sketch extends PApplet {
 
     // Creates antenna (remote control antenna)
     stroke(255);
-    fill(255, 0, 0); // Set fill color to red
+    fill(255, 0, 0);
     rect(topLeftX + 40, topLeftY - 30, 20, 30);
 
     // Creates circle (remote control button)
