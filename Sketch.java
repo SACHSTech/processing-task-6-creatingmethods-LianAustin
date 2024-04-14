@@ -30,8 +30,6 @@ public class Sketch extends PApplet {
    *
    * @param x - the X value of top left corner of where the lamp will the drawn
    * @param y - the Y value of top left corner of where the lamp will the drawn
-   *
-   * @author: Austin L
    */
   public void drawLamp(int x, int y) {
     int[] lampColour = randomColour(); // Get a random colour for the lamp
@@ -49,8 +47,6 @@ public class Sketch extends PApplet {
    *
    * @param topLeftX - the X value of top left corner of where the remote control will the drawn
    * @param topLeftY - the Y value of top left corner of where the remote control will the drawn
-   *
-   * @author: Austin L
    */
   public void drawRemoteControl(int topLeftX, int topLeftY) {
     // Creates rectangle (remote control)
@@ -73,8 +69,6 @@ public class Sketch extends PApplet {
    * Description: creates a random colour
    *
    * @return int[] - an array of 3 integers representing the RGB values of the colour
-   *
-   * @author: Austin L
    */
   public int[] randomColour() {
     int[] colour = new int[3];
